@@ -21,7 +21,7 @@ const renderRow = (rowIndex: number) => {
         </div>
     );
 }
-    return <div>{[0,1,2,3].map(renderRow)}</div>
+    return <div className = "board">{[0,1,2,3].map(renderRow)}</div>
 };
 
 export default Board

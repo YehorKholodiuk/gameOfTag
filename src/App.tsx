@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
         <h1>GAME</h1>
-        <div className = "container">
+        <div className = "board-container">
       <Board
       tiles = {tiles}
       />
