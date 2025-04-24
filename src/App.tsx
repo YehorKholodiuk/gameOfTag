@@ -1,24 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Board from "./Board";
 
 function App() {
+  const initialTiles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0]
+  const [tiles, setTiles] = useState(initialTiles)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>GAME</h1>
+        <div className = "container">
+      <Board
+      tiles = {tiles}
+      />
+    </div>
+        <button>Shuffle</button>
     </div>
   );
 }
