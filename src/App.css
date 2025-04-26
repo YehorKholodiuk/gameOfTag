@@ -16,6 +16,35 @@
     width:100px;
     border:1px solid black;
     background-color: darkgreen;
-    font-size: 22px;
 
+
+    font-size: 22px;
+    border-radius:10px;
+    transition:1s;
+    cursor:pointer;
+
+}
+
+.tile.empty {
+    background-color: transparent;
+    /*pointer-events:none;*/
+    cursor:not-allowed;
+}
+
+.tile-text{
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height:100%;
+    weight:100%;
+}
+
+.button{
+    text-align: center;
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color:aquamarine;
 }
