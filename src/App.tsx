@@ -16,6 +16,19 @@ function App() {
         }
         setTiles(shuffledTiles)
     }
+
+    const canMoveTiles = (index:number) => {
+      const emptyIndex = tiles.indexOf(0)
+        const rowIndex = Math.floor(emptyIndex / 4)
+        return (
+
+            index === emptyIndex - 4 && rowIndex > 0 ||
+            index === emptyIndex + 4 && rowIndex < 3 ||
+            index === emptyIndex - 1 && rowIndex % 4 !==3 ||
+            index === emptyIndex + 1 && rowIndex % 4 !== 0
+        )
+    }
+
   return (
     <div className="App">
         <h1>GAME</h1>
