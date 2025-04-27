@@ -29,12 +29,20 @@ function App() {
         )
     }
 
+    const handleClic = (index: number) => {
+      const newTiles = [...tiles];
+        const emptyIndex = newTiles.indexOf(0);
+        [newTiles[index], newTiles[emptyIndex]] = [newTiles[emptyIndex], newTiles[index]]
+        setTiles(newTiles)
+    }
+
   return (
     <div className="App">
         <h1>GAME</h1>
         <div className = "board-container">
       <Board
       tiles = {tiles}
+      onTileClick = {handleClic}
       />
     </div>
         <button className = "button" onClick = {mixTiles}>Shuffle</button>
