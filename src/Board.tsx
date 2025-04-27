@@ -2,19 +2,23 @@ import React from 'react';
 import Til from "./Til";
 interface BoardProps {
     tiles:number[]
+    onTileClick: (index:number) => void
 }
 
-const Board: React.FC<BoardProps> = ({tiles}) => {
+const Board: React.FC<BoardProps> = ({tiles, onTileClick}) => {
 const renderRow = (rowIndex: number) => {
 
 
     return (
         <div key={rowIndex} className="board-row">
-            {tiles.slice(rowIndex , (rowIndex + 1) ).map((value, index) => (
+            {tiles.slice(rowIndex * 4 , (rowIndex + 1) * 4  ).map((value, index) => (
 
                 <Til
                     key={index}
                     value={value}
+                    onTileClick={ () => onTileClick(index + rowIndex * 4)}
+
+                    //onTileClick принимает index + rowIndex * 4
                 />
 
             ))}
